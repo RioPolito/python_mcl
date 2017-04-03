@@ -73,8 +73,8 @@ def mcl(M, expand_factor = 2, inflate_factor = 2, max_loop = 10 , mult_factor = 
 
     for i in range(max_loop):
         logging.info("loop %s" % i)
-        M = inflate(M, inflate_factor)
         M = expand(M, expand_factor)
+        M = inflate(M, inflate_factor)
         if stop(M, i): break
 
     clusters = get_clusters(M)
